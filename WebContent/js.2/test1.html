@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// 	웹브라우저 내장객체
+// 	window - location
+// 			       -  history
+// 	               - document   -  image, link, layer, ......
+// 	                                      -  form - text , password, textarea
+// 	                                                   - checkbox, radio
+// 	                                                   - select                           -option
+	               
+//	               window 내장객체 변수 status, opener   함수 open() close()
+//                               내장객체 . 변수   내장객체.함수()
+//				                   window .status       window.open()      window.close()	          
+
+function fun1() {
+// 	window.open("창열떄 열리는 주소,문서이름","창이름","창크기,위치......");
+	window.open("http://www.naver.com","창이름","width=200,height=100,left=100,top=100,scrollbars=yes,resizeable=yes");
+}
+
+
+// 함수 fun2()  창열기 test1_2.html 문서열기
+function fun2() {
+window.open("test1_2.html","창이름","width=200,height=100");
+
+}
+
+//창단기
+function fun3() {
+	window.close();
+	
+}
+
+
+</script>
+</head>
+<body>
+<h1>js2/test1.html</h1>
+<input type="button" value="창열기" onclick="fun1()">
+<input type="button" value="창열기2" onclick="fun2()">
+<input type="button" value="창닫기" onclick="fun3()">
+
+
+</body>
+</html>

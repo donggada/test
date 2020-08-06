@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//웹브라우저 내장객체
+//window - location
+//		       -  history
+//     - document   -  image, link, layer, ......
+//                            -  form - text , password, textarea
+//                                         - checkbox, radio
+//                                         - select                           -option
+
+
+//window.document.폼이름.테스트함수.변수         type name value
+//               document.fr.txt.type
+//               document.fr.txt.name
+//               document.fr.txt.value
+//window.document.폼이름.텍스트 상자.함수       
+//               document.fr.txt.focus();
+//               document.fr.txt.blur();
+//               document.fr.txt.select();
+
+function fun1() {
+	alert(document.fr.txt.type);
+	alert(document.fr.txt.name);
+	alert(document.fr.txt.value);
+}
+
+function fun2() {
+	//텍스트 상자 포커스
+	document.fr.txt.focus();  //깜밖
+	document.fr.txt.blur();    //해체
+	document.fr.txt.select();  //글자선택 블럭
+}
+function fun3(){
+	//if  텍스트 상자가 비어있으면 (value 변수가 비었이면/공백이랑 같으면)   텍스트 상자가 비어있으면 "텍스트입력하세요"
+	if(document.fr.txt.value==""){
+		alert( "텍스트입력하세요");
+		//텍스트 상자에 포커스
+		document.fr.txt.focus();
+		
+	}else if(document.fr.pass.value==""){
+		//비밀번호 입력하세여
+		//비빌번호 상자 포커스
+		alert( "비밀번호 입력하세요");
+		document.fr.pass.focus();
+	}else if(document.fr.tx.value==""){
+		alert( "긴텍스트를 입력하세요");
+		document.fr.tx.focus();
+	}else{
+		document.fr.submit();
+	}
+		}
+		
+function fun4() {
+	
+	// value에 저장된글자 =>문자개수
+	// 문자열내장객체.변수     문자열.length
+	// 문자열내장객체.함수()
+
+// 	alert("문자열".length);
+// 	alert(document.fr.txt.value.length);
+	
+	if(document.fr.txt.value.length==0){
+		alert( "텍스트입력하세요");
+	
+	 	document.fr.txt.focus();
+	 	
+	 	return;
+	}
+	
+// 	if(document.fr.txt.value==""){
+// 	alert( "텍스트입력하세요");
+// 	//텍스트 상자에 포커스
+// 	document.fr.txt.focus();
+// 	//수행하고 끝내겟다(함수호출하는곳으로 이동, 되돌아감)
+// 	return;
+//	}
+      if(document.fr.pass.value==""){
+		//비밀번호 입력하세여
+		//비빌번호 상자 포커스
+		alert( "비밀번호 입력하세요");
+		document.fr.pass.focus();
+		return;
+	} 
+      if(document.fr.tx.value==""){
+		alert( "긴텍스트를 입력하세요");
+		document.fr.tx.focus();
+		return;
+	}
+		document.fr.submit();
+	
+}
+</script>
+</head>
+<body>
+<h1>js3/test1.html</h1>
+<form action="a.jsp" method="get" name="fr">
+텍스트<input type="text"  name="txt" ><br>
+비밀번호<input type="password" name="pass" ><br>
+긴텍스트<textarea name="tx"  rows="10" cols="20"></textarea><br>
+<input type="button" value="버튼" onclick="fun1()">
+<input type="button" value="버튼2" onclick="fun2()">
+<input type="button" value="버튼3" onclick="fun3()">
+<input type="button" value="버튼4" onclick="fun4()">
+</form>
+
+
+</body>
+</html>

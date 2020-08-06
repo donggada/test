@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//웹브라우저 내장객체
+//window - location
+//		       -  history
+//           - document   -  image, link, layer, ......
+//                                  -  form - text , password, textarea
+//                                               - checkbox, radio
+//                                               - select                           -option
+
+
+// window. document.imager[0].변수 ->  src, name, width, height, border
+// window. document.이미지이름.변수
+// window. document.imager[0].함수 ()                                  
+function fun1() {
+	alert(document.img1.src);
+	alert(document.images[0].name);
+	alert(document.images[0].width);
+	alert(document.images[0].height);
+	alert(document.images[0].border);
+}
+
+function fun2() {
+	document.images[0].src="2.jpg";
+		document.images[0].width="500";
+			document.images[0].border="10";
+		
+}
+
+function fun3() {
+	document.images[1].src="4.jpg";
+		document.images[1].border="5";
+}
+
+function fun4() {
+	//세번쨰 이미지에 마우스를 오번하면 이미지 파일 5.jpg 변경
+	document.img3.src="5.jpg";
+}
+
+function fun5() {
+	document.img3.src="4.jpg";
+}
+</script>
+</head>
+<body>
+<h1>js2/test5.html</h1>
+<Img src="1.jpg" name="img1" width= "300" height="200" border="1" >
+
+<input type="button" value="이미지정보" onclick="fun1()">
+<input type="button" value="이미지정보변경" onclick="fun2()">
+<Img src="3.jpg" name="img2" width= "300" height="200" border="1"  onclick="fun3()">
+<Img src="4.jpg" name="img3" width= "300" height="200" border="1"  onmouseover="fun4()" onmouseout="fun5()">
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../JS/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+
+jQuery(document).ready(function () {
+$.ajax('string2.jsp',{
+	data:{
+		name:'홍길동',
+		age:20
+	},
+	success:function(returndata){
+		$('body').append(returndata)
+	}
+})	;
+$('#btn').click(function () {
+	$.ajax('string2.jsp',{
+		data:{name:$('#name').val(),age:$('#age').val()},
+		success:function(returndata){$('table').append('<tr><td>'+returndata+'</td></tr>')}
+		}
+	)
+}
+);
+	
+	
+	
+});
+</script>
+</head>
+<body>
+<h1>Js_jQurey2/string2.html</h1>
+<table border="1">
+<tr><td>출력값</td></tr>
+</table>
+이름 : <input type="text" name="name" id="name"><br>
+나이 : <input type="text" name="age" id="age"><br>
+<div>
+
+</div>
+<input type="button" value="데이터가져오기" id="btn" >
+</body>
+</html>

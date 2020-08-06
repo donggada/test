@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//웹브라우저 내장객체
+//window - location
+//		       -  history
+//   - document   -  image, link, layer, ......
+//                          -  form - text , password, textarea
+//                                       - checkbox, radio
+//                                       - select                           -option
+
+//window.document.폼이름.라디오박스[0].변수 type, name value
+//                                             checked 체크되어있으면 ture , 체크안되어있으면 false
+//window.document.폼이름.라디오박스[0].함수()  focus() blur()  click()
+function fun1() {
+	alert(document.fr.ra[0].type);
+	alert(document.fr.ra[0].name);
+	alert(document.fr.ra[0].value);
+	alert(document.fr.ra[0].checked);
+	//focus  
+	document.fr.ra[0].focus();
+	//blur (foucs)해체
+	document.fr.ra[0].blur();
+	//click
+	document.fr.ra[0].click();
+	
+}
+
+function fun2() {
+	if(document.fr.ra[0].checked==false && document.fr.ra[1].checked==false){
+		alert("라디오박스 선택하세요");
+		//첫번째 라디오박스 포커스
+		//함수 호출한 곳으로 되돌아감
+		document.fr.ra[0].focus();
+		return;
+	}
+// 	if(document.fr.ch[0].checked==false && document.fr.ch[1].checked=false && document.fr.ch[2].checked==false){
+// 		alert("체크박스선택하세요");
+// 		document.fr.ch[0].focus();
+// 		return;
+// 	}
+	document.fr.submit();
+	
+	//체크박스 선택 안되어있으면 "체크박스선택하세요" 포커스 되돌어감
+	//a.jsp submit전송
+</script>
+</head>
+<body>
+<h1>js3/test4.html</h1>
+<form action="a.jsp" method="get" name="fr">
+라디오:<input type="radio" name="ra" value="ra1">라디오1
+         <input type="radio" name="ra" value="ra1">라디오2<br>
+ 체크박스:<input type="checkbox" name="ch" value="ch1">체크박스 1
+ 	         <input type="checkbox" name="ch" value="ch2">체크박스 2
+ 	         <input type="checkbox" name="ch" value="ch3">체크박스 3<br>
+ <input type="button" name="버튼" onclick="fun1()">
+  <input type="button" name="버튼2" onclick="fun2()">
+ </form>
+</body>
+</html>

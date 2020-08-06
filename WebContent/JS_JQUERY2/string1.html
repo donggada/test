@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../JS/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+
+jQuery(document).ready(function () {
+	//대상 파일 string1.jsp
+	$.ajax('string1.jsp',{
+		success:function(returndata
+				){
+			//string1.jsp에서 받은 출력밧을 'body'태그 뒷부분에 추가
+			$('body').append(returndata)
+		}
+	});
+	
+	$('#btn').click(function(){	$.ajax('string1.jsp',{
+		success:function(returndata){
+			$('table').append('<tr><td>'+returndata+'</td></tr>') 
+														}
+																				});
+	$(this).unbind();
+	
+							});
+
+	
+	
+	
+	
+	
+	
+});
+</script>
+</head>
+<body>
+<h1>Js_jQurey2/string1.html</h1>
+<table border="1">
+<tr><td>출력값</td></tr>
+</table>
+<input type="button" value="데이터가져오기" id="btn" >
+</body>
+</html>

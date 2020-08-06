@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../JS
+/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.getJSON('json1.jsp',function(rdata){
+			
+			$.each(rdata,function(index,item){
+// 				alert(item.id);
+				//body 뒤부분에 추가 <h3>id,pass,name</h3>
+				$('body').append("<h3>"+item.id+","+item.pass+","+item.name+"</h3>");
+			});
+		});
+		// #btn 클릭 했을때  json1.jsp 데이터가져오기 table추가하기
+		
+		$('#btn').click(function() {
+			$.getJSON('json1.jsp',function(rdata){
+				$.each(rdata,function(index,item){
+					$('table').append("<tr><td>"+item.id+"</td><td>"+item.pass+"</td><td>"+item.name+"</td></tr>");
+				});
+			});
+		});
+	});
+</script>
+
+</head>
+<body>
+<h1>js_jQuery2/json1.html</h1>
+<table border="1">
+
+<tr><td>아이디</td><td>비밀번호</td><td>이름</td></tr>
+</table>
+<input type="button" value="데이터가져오기" id="btn">
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function check() {
+	if(document.fr.id.value==""){
+		alert("아이디를 입력하세요");
+		document.fr.txt.focus();
+	}else if(document.fr.pass.value==""){
+		alert("비밀번호를 입력하세요");
+		document.fr.pass.focus();
+	}else if(document.fr.name.value==""){
+		alert("이름을 입력하세요");
+		document.fr.name.focus();
+	}else if(document.fr.gender[0].checked==false &&document.fr.gender[1].checked==false ){
+		alert("성별을 선택하세요");
+		document.fr.gender[0].focus();
+	}else if(document.fr.hobby[0].checked==false &&document.fr.hobby[1].checked==false && document.fr.hobby[2].checked==false ){
+		alert("취미을 선택하세요");
+		document.fr.hobby[0].focus();
+		
+	}else if(document.fr.grade.options[0].selected==true){
+		alert("등급을 선택하세요");
+		document.fr.grade[0].focus();
+	}else if (document.fr.intro.value==""){
+		alert("자기소개를 적으세요");
+		document.fr.grade.focus();
+	}else{
+		document.fr.submit();
+	}
+	
+
+	
+}
+
+function check2() {
+	if(document.getElementById("idd").value==""){
+		alert("아이디를 입력하세요");
+		document.fr.txt.focus();
+		return false;
+	}
+	if(document.getElementById("pas").value==""){
+		alert("비밀번호를 입력하세요");
+		document.fr.pass.focus();
+		return false;
+	}
+	if(document.fr.name.value==""){
+		alert("이름을 입력하세요");
+		document.fr.name.focus();
+		return false;
+		
+	}
+	if(document.fr.gender[0].checked==false &&document.fr.gender[1].checked==false ){
+		alert("성별을 선택하세요");
+		document.fr.gender[0].focus();
+		return false;
+	}
+	if(document.fr.hobby[0].checked==false &&document.fr.hobby[1].checked==false && document.fr.hobby[2].checked==false ){
+		alert("취미을 선택하세요");
+		document.fr.hobby[0].focus();
+		return false;
+		
+	}
+	if(document.fr.grade.options[0].selected==true){
+		alert("등급을 선택하세요");
+		document.fr.grade[0].focus();
+		return false;
+	}
+	if (document.fr.intro.value==""){
+		alert("자기소개를 적으세요");
+		document.fr.grade.focus();
+		
+		return false;
+	}
+		
+	
+	
+
+	
+}
+</script>
+</head>
+<body>
+<h1>js3/test7.html 회원가입</h1>
+<form action="a.jsp" method="post" name="fr" onsubmit="return check2()">
+아이디 : <input type="text" name="id" id="idd"><br>
+비밀번호 : <input type="password" name="pass" id="pas"><br>
+이름 : <input type="text" name="name"><br>
+성별 : <input type="radio" name="gender" value="남">남자
+       <input type="radio" name="gender" value="여">여자<br>
+취미 :<input type="checkbox" name="hobby" value="여행">여행
+    <input type="checkbox" name="hobby" value="게임">게임
+    <input type="checkbox" name="hobby" value="독서">독서<br>
+회원등급 : <select name="grade">
+		   <option value="">회원 등급선택하세요</option> 
+		   <option value="1">1등급</option>
+		   <option value="2">2등급</option>
+		   <option value="3">3등급</option>
+        </select><br>
+자기소개 : <textarea name="intro" rows="10" cols="20"></textarea><br>   
+<input type="button" value="회원가입" onclick="check()">
+<input type="submit" value="회원가입전송" >
+</form>
+</body>
+</html>

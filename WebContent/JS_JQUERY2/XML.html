@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../JS/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+
+jQuery(document).ready(function () {
+$.ajax('XML.jsp',{
+	success:function(rdata){
+		$(rdata).find('member').each(function () {
+			var id=$(this).find('id').text();
+			var pass=$(this).find('pass').text();
+			var name=$(this).find('name').text();
+			$('body').append(id+","+pass+","+name+"<br>")
+		});
+	}
+});
+
+
+
+	$('#btn').click(function () {
+		$.ajax('XML.jsp',{
+			success:function(rdata){
+				$(rdata).find('member').each(function () {
+					var id=$(this).find('id').text();
+					var pass=$(this).find('pass').text();
+					var name=$(this).find('name').text();
+					$('table').append('<tr><td>'+id+'</td><td>'+pass+'</td><td>'+name+'</td></tr>')
+				});
+			}
+		});
+	});
+	
+	
+	
+	
+	
+});
+</script>
+</head>
+<body>
+<h1>Js_jQurey2/xml.html</h1>
+<table>
+<tr><td>아이디</td><td>비밀번호</td><td>이름</td></tr>
+</table>
+<input type="button" value="데이터가져오기" id="btn">
+</body>
+</html>

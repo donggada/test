@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function check() {
+		if (document.fr.qwe.value.length==0) {
+			alert("이름를 확인하세요");
+			document.fr.qwe.focus();
+		}else if (document.fr.asd.value.length!=6) {
+			alert("주민번호를 확인하세요");
+			document.fr.asd.focus();
+		} 
+		else if (document.fr.asd1.value.length!=7) {
+			alert("주민뒷번호를 확인하세요");
+			document.fr.asd1.focus();
+		}
+		else if (document.fr.id.value.length<4 || document.fr.id.value.length>11) {
+			alert("ID를 입력하세요");
+			document.fr.id.focus();
+		}
+		else if (document.fr.pass.value.length<4 || document.fr.pass.value.length>11) {
+			alert("비밀번호를 확인하세요");
+			document.fr.pass.focus();
+		} 
+		else if (!(document.fr.pass.value == document.fr.pass1.value)) {
+			alert("비밀번호을 확인1해주세요");
+			document.fr.pass1.focus();
+		} 
+		else if (document.fr.ph.value=="") {
+			alert("전화번호를 확인하세요");
+			document.fr.ph.focus();
+		} 
+		else if (document.fr.grade.options[0].selected == true) {
+			alert("회원분류을 선택하세요");
+			document.fr.grade[0].focus();
+		}else{
+			document.fr.submit();
+		}
+	}
+	
+	
+	function fun1() {
+		alert("중복확인완료")
+	}
+	function fun2() {
+		window.open("test2.html","창이름","width=200,height=100");
+	}
+</script>
+</head>
+<body>
+	<form action="test2.html" method="get" name="fr">
+    <input type="button">이름 : <input type="text" name="qwe"><br>
+											주민번호 : <input type="text" name="asd"> - <input type="text" name="asd1"><br> 
+	<input type="button">아이디 : <input type="text" name="id"><input type="button" value="중복확인"name="id1"  onclick="fun1()"><br> 
+	<input type="button">비밀번호 : <input type="password" name="pass"><br> <input type="button">
+											비밀번호확인: <input type="password" name="pass1"><br>  
+											이메일 : <input type="password" name="em"><br> <input type="button">
+											전화: <input type="text" name="ph"><br>
+											휴대번호 : <input type="text" name="te"><br> 
+											우편번호 : <input type="text"  name="ad"> - <input type="text" name="ad1">  <input type="button" value="검색"name="id1"  onclick="fun2()"><br>
+		                                              <input type="text" name="ad2"><br>
+		                                              상세주소 :<input type="text" name="ad3"><br> 
+		                                              회원분류 : <select name="grade">
+			<option value="">회원 등급을 선택하세요</option>
+			<option value="1">VIP</option>
+			<option value="2">우수</option>
+			<option value="3">일반</option>
+		</select><br>
+         <input type="button" value="가입" onclick="check()">
+		 <input type="reset" value="취소">
+	</form>
+</body>
+</html>

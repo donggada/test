@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//웹브라우저 내장객체
+//window - location
+//		       -  history
+//       - document   -  image, link, layer, ......
+//                              -  form - text , password, textarea
+//                                           - checkbox, radio
+//                                           - select                           -option
+
+// window.document.forms[0].변수
+// window.document.폼이름.변수
+// window.document.forms[0].함수()   submit()  reset()
+// window.document.폼이름.함수       ex  window.document.fr.submit()
+
+function fun1() {
+	alert(window.document.forms[0].action);
+	alert(window.document.forms[0].method);
+	alert(window.document.forms[0].name);
+}
+
+function fun2() {
+	window.document.forms[0].submit();
+}
+
+function fun3() {
+	window.document.fr.action="b.jsp";
+	
+	window.document.fr.method="post";
+	window.document.forms[0].submit();
+}
+
+function fun4(x) {
+	if (x=="basket"){
+		document.fr.action="basket.jsp";
+			
+	}else{
+		document.fr.action="order.jsp";
+			
+	}
+	document.fr.submit();
+}
+</script>
+</head>
+<body>
+<h1>js3/test1.html</h1>
+<form action="a.jsp" method="get" name="fr">
+<input type="text" name="id"><br>
+<input type="button" value="버튼" onclick="fun1()">
+<input type="button" value="전송버튼" onclick="fun2()">
+<input type="button" value="변경해서전송" onclick="fun3()">
+<input type="button" value="장바구니" onclick="fun4('basket')">
+<input type="button" value="바로구매" onclick="fun4('order')">
+</form>
+</body>
+</html>
